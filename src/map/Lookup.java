@@ -12,7 +12,17 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Lookup {
-	public static String lookupPlace(String query) {
+	public static Location lookupPlace(String query) {
+		JSONArray results = queryURL(query);
+		if (results.isEmpty()) return null;
+		
+        JSONObject best = results.getJSONObject(0);
+        double lat = best.getDouble("lat");
+        double lon = best.getDouble("lon");
+        return new Location(lat, lon);
+	}
+
+	private static JSONArray queryURL(String query) {
 		JSONArray results = new JSONArray();
 		try {
 			String urlString = "https://nominatim.openstreetmap.org/search?q=" + URLEncoder.encode(query, "UTF-8") + "&format=json";
@@ -32,11 +42,6 @@ public class Lookup {
 		} catch (UnsupportedEncodingException | MalformedURLException e) {
 			e.printStackTrace();
 		}
-		if (results.isEmpty()) return null;
-		
-        JSONObject best = results.getJSONObject(0);
-        double lat = best.getDouble("lat");
-        double lon = best.getDouble("lon");
-        return lat + "\t" + lon;
+		return results;
 	}
 }
