@@ -1,7 +1,6 @@
 package map;
 
-public class Location{
-
+public class Location {
 
 	private double lat;
 	private double lon;
