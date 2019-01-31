@@ -11,4 +11,4 @@ local.properties
 .recommenders
 build/
 target/
-.classpath
+*.DS_Store
