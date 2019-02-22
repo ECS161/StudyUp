@@ -19,7 +19,7 @@ public class Event {
 	private String name;
 	private Location location;
 	private List<Student> students;
-	private Date date;
+	//private Date date;
 
 	public String getName() {
 		return name;
@@ -45,13 +45,13 @@ public class Event {
 		this.students = students;
 	}
 
-	public Date getDate() {
-		return date;
-	}
+	//public Date getDate() {
+		//return date;
+	//}
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+	//public void setDate(Date date) {
+		//this.date = date;
+	//}
 
 	public int getEventID() {
 		return eventID;

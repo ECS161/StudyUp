@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Calendar;
 
 import edu.studyup.entity.Event;
 import edu.studyup.entity.Student;
@@ -74,6 +75,11 @@ public class EventServiceImpl implements EventService {
 	@Override
 	public Event deleteEvent(int eventID) {		
 		return DataStorage.eventData.remove(eventID);
+	}
+
+	public void updateEventName(Event event) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
