@@ -1,6 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<<<<<<< HEAD
 <%@ page import="edu.studyup.map.Lookup" %>
 <%@ page import="edu.studyup.entity.Location" %>
+=======
+<%@ page import="map.Lookup" %>
+<%@ page import="map.Location" %>
+>>>>>>> Add Location.java
 <html>
 <head>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
@@ -77,10 +82,16 @@
 	if (place != null && !place.isEmpty()) {
        	Location loc = Lookup.lookupPlace(place);
        	if (loc != null) {
+<<<<<<< HEAD
         	double lat = loc.lat;
         	double lon = loc.lon;
         	double[] bounds = loc.bounds; %>
         	<script>gotoLoc(<%=lat%>, <%=lon%>, [<%=bounds[0]%>, <%=bounds[1]%>, <%=bounds[2]%>, <%=bounds[3]%>]);</script>
+=======
+        	double lat = loc.getLat();
+        	double lon = loc.getLon(); %>
+        	<script>gotoLoc(<%=lat%>, <%=lon%>);</script>
+>>>>>>> Add Location.java
        	<%}
        }%>
 </body>
